@@ -11,14 +11,14 @@ PRODUCT_RELEASE_NAME := alioth
 DEVICE_PATH := device/xiaomi/alioth
 
 # Inherit from alioth  device
-$(call inherit-product, $(DEVICE_PATH)/device.mk)
+$(call inherit-product, device/xiaomi/alioth/device.mk)
 
 # Inherit some common LineageOS stuff.
 $(call inherit-product, vendor/pb/config/common.mk)
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := pb_$(PRODUCT_RELEASE_NAME)
-PRODUCT_DEVICE := $(PRODUCT_RELEASE_NAME)
+PRODUCT_NAME := pb_alioth
+PRODUCT_DEVICE := alioth
 PRODUCT_BRAND := POCO
 PRODUCT_MANUFACTURER := Xiaomi
 PRODUCT_MODEL := POCO F3
