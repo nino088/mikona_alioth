@@ -10,6 +10,9 @@ PRODUCT_RELEASE_NAME := alioth
 
 DEVICE_PATH := device/xiaomi/alioth
 
+# Configure core_64_bit_only.mk
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
+
 # Inherit from alioth  device
 $(call inherit-product, device/xiaomi/alioth/device.mk)
 
