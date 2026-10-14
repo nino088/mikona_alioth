@@ -101,12 +101,11 @@ ifeq ($(FOX_BUILD_FULL_KERNEL_SOURCES),1)
     LLVM := 1
     LLVM_IAS := 1
 else
-    KERNEL_PATH := $(DEVICE_PATH)/prebuilt/$(PRODUCT_RELEASE_NAME)
-    TARGET_PREBUILT_KERNEL := $(KERNEL_PATH)/prebuilt/alioth/Image.gz-dtb
-    BOARD_PREBUILT_DTBOIMAGE := $(KERNEL_PATH)/prebuilt/alioth/dtbo.img
-    TARGET_PREBUILT_DTB := $(KERNEL_PATH)/alioth/dtb.img
-    TARGET_PREBUILT_DTB += $(KERNEL_PATH)/alioth/kona-v2.dtb
-    TARGET_PREBUILT_DTB += $(KERNEL_PATH)/alioth/kona-v2.1.dtb 
+    TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/alioth/Image.gz-dtb
+    BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilt/alioth/dtbo.img
+    TARGET_PREBUILT_DTB := $(DEVICE_PATH)/prebuilt/alioth/kona.dtb
+    TARGET_PREBUILT_DTB += $(DEVICE_PATH)/prebuilt/alioth/kona-v2.dtb
+    TARGET_PREBUILT_DTB += $(DEVICE_PATH)/prebuilt/alioth/kona-v2.1.dtb 
 endif
 
 #A/B
