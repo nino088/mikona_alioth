@@ -1,17 +1,20 @@
 #
+# Copyright (C) 2026 The Android Open Source Project
+# Copyright (C) 2026 PitchBlack Recovery Project
+#
 # SPDX-License-Identifier: Apache-2.0
 #
-# Copyright (C) 2021-2023 The OrangeFox Recovery Project
-# SPDX-License-Identifier: GPL-3.0-or-later
-#
 
-# Release name
-PRODUCT_RELEASE_NAME := alioth
+# Inherit from those products. Most specific first.
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
 
-DEVICE_PATH := device/xiaomi/alioth
+# Enable updating of APEXes (if present in build tree)
+$(call inherit-product-if-exists, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
-# Configure core_64_bit_only.mk
-$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
+# Installs gsi keys into ramdisk, to boot a developer GSI with verified boot (if present in build tree)
+$(call inherit-product-if-exists, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
+$(call inherit-product-if-exists, $(SRC_TARGET_DIR)/product/developer_gsi_keys.mk)
 
 # Inherit from alioth  device
 $(call inherit-product, device/xiaomi/alioth/device.mk)
