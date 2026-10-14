@@ -101,6 +101,7 @@ ifeq ($(FOX_BUILD_FULL_KERNEL_SOURCES),1)
     LLVM := 1
     LLVM_IAS := 1
 else
+    KERNEL_PATH := $(DEVICE_PATH)/prebuilt/alioth
     TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/alioth/Image.gz-dtb
     BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilt/alioth/dtbo.img
     TARGET_PREBUILT_DTB := $(DEVICE_PATH)/prebuilt/alioth/kona.dtb
