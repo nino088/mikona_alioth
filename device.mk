@@ -103,8 +103,6 @@ RECOVERY_LIBRARY_SOURCE_FILES += \
     $(TARGET_OUT_SYSTEM_EXT_SHARED_LIBRARIES)/vendor.display.config@2.0.so \
     $(TARGET_OUT_SYSTEM_EXT_SHARED_LIBRARIES)/libdisplayconfig.qti.so
 
-# OEM otacert
+# OEM otacerts
 PRODUCT_EXTRA_RECOVERY_KEYS += \
-    vendor/recovery/security/miui
-
-
+    $(DEVICE_PATH)/security/otacert
